@@ -13,4 +13,8 @@ public class Application extends Controller {
 	public Result login() {
 		return ok(login.render());
 	}
+
+	public Result signup() {
+		return ok(signup.render());
+	}
 }

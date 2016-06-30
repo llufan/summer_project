@@ -6,6 +6,8 @@
 GET     /                           controllers.Application.index
 # login page
 GET		/login						controllers.Application.login
+# registration page
+GET		/signup						controllers.Application.signup
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
