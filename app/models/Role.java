@@ -1,5 +1,5 @@
 package models;
 
 public enum Role {
-    CUSTOMOR, CHEF, MANAGER
+    CUSTOMER, CHEF, MANAGER
 }

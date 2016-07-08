@@ -42,14 +42,21 @@ public class User extends Model {
     public String password;
 
     @Required
+    @MinLength(6)
+    @MaxLength(20)
+    @Column(name="repeatPassword", nullable=false)
+    public String repeatPassword;
+
+    @Required
     @Column(nullable=false)
     public Role role;
 
-    public User(String email, String firstName, String lastName, String password, Role role){
+    public User(String email, String firstName, String lastName, String password, String repeatPassword, Role role){
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.repeatPassword = repeatPassword;
         this.role = role;
     }
 
