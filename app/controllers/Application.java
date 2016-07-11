@@ -11,6 +11,16 @@ import models.*;
 import java.util.*;
 
 public class Application extends Controller {
+
+    public static Result sendBadRequest( String error ) {
+        List<String> errorList = new ArrayList<>();
+        errorList.add( error );
+        return sendBadRequest(errorList);
+    }
+
+    public static Result sendBadRequest(List<String> errors) {
+        return badRequest( badRequest.render(errors) );
+    }
 	
 	public Result index() {
 		return ok(home.render());
@@ -73,18 +83,18 @@ public class Application extends Controller {
         Optional<User> potentialUser = User.findByEmail(login.email);
 
         if ( !potentialUser.isPresent() ) {
-            return redirect( routes.Application.login() );
+            return sendBadRequest("User with that email does not exist.");
         }
 
         User user = potentialUser.get();
 
-        if ( login.password != user.password) {
-        	return redirect( routes.Application.login() );
+        if ( !login.password.equals(user.password) ) {
+        	return sendBadRequest("Wrong password!");
         }
 
         session().clear();
         session("email", user.email);
 
-    	return redirect( routes.Application.index() );
+    	return ok(welcome.render());
     }
 }
