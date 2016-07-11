@@ -1,3 +1,46 @@
-<p>Home page!</p>
-<a href="@routes.Application.login">Login</a><br>
-<a href="@routes.Application.signup">Signup</a><br>
+@main("Home")( new ArrayList() ) {
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body > 
+    <section id="home-sec">
+        <div class="overlay text-center">
+            <h1 >GET LOCAL</h1>
+            <hr class="hr-set"/>
+
+            <p>We love to keep it local. </p>
+            <p>Find a chef close to hom with Kitch's ASAP feature.</p>
+            <p>We want to make sure you get fed as soon as you want.</p>
+        </div>
+    </section>
+    <!--HOME SECTION END-->
+<div class="container">
+    <div class="col-md-6" >
+                    
+        <div class="alert alert-info" >
+            <div class="form-group">
+                <strong>Sign Up</strong>
+                <br />
+                <br>
+                <label>We will never charge you for an account.</label>
+                <br />
+                <input type="text" class="form-control" name="firstName"  placeholder="First Name" class="textbox" required autocomplete="off" />
+                <input type="text" class="form-control" name="lastName" placeholder="Last Name" class="textbox" required autocomplete="off"/>
+                <input type="email" class="form-control" name="email" placeholder="First Name" class="textbox" required autocomplete="off"/>
+                <input type="password" class="form-control" name="password" placeholder="Password" class="textbox" required autocomplete="off"/>
+                <input type="password" class="form-control" name="repeatPassword" placeholder="Repeat Password" class="textbox" required autocomplete="off"/>
+                <label> Role:<span class="req">*</span> <label/>
+                <select id="role" name="role" required>
+                    <option value="CUSTOMER">Customer</option>
+                    <option value="CHEF">Chef</option>
+                </select>
+            </div>
+            <br />
+            <a href="#" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+}

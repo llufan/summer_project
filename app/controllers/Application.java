@@ -34,6 +34,16 @@ public class Application extends Controller {
 
         //SignUpForm newForm = Form.form( SignUpForm.class ).bindFromRequest().get();
 
+        //check if password == repeatPassword
+
+        //check if user already exited
+
+        //print message sign-up success
+
+        //email confirmation
+
+
+
         User user = new User(
                 newForm.email,
                 newForm.firstName,
@@ -52,5 +62,29 @@ public class Application extends Controller {
         }
 
         return redirect( routes.Application.login() );
+    }
+
+    public Result postLogin() {
+
+    	Form<LoginForm> formData = Form.form(LoginForm.class).bindFromRequest();
+
+        LoginForm login = formData.get();
+
+        Optional<User> potentialUser = User.findByEmail(login.email);
+
+        if ( !potentialUser.isPresent() ) {
+            return redirect( routes.Application.login() );
+        }
+
+        User user = potentialUser.get();
+
+        if ( login.password != user.password) {
+        	return redirect( routes.Application.login() );
+        }
+
+        session().clear();
+        session("email", user.email);
+
+    	return redirect( routes.Application.index() );
     }
 }

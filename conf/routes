@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index
 # login page
 GET		/login						controllers.Application.login
+POST	/login						controllers.Application.postLogin
 # registration page
 GET		/signup						controllers.Application.signup
 POST	/signup						controllers.Application.registerUser
