@@ -14,28 +14,40 @@
     </section>
     <!--HOME SECTION END-->
 <div class="container">
+
+    <div class="col-md-6" >
+        <h2><strong> GET LOCAL </strong></h2>
+        <br />
+        <h4>We love to keep it local. </h4>
+        <h4>The Lane Tower Road,</h4>
+        <h4>Find a chef close to hom with Kitch's ASAP feature.</h4>
+        <br />
+        <h4>We want to make sure you get fed as soon as you want.</h4>
+    </div>
+
     <div class="col-md-6" >
                     
         <div class="alert alert-info" >
-            <div class="form-group">
+            <form id="registrationForm" action="/signup" method="post" class="form-group">
+                <form id="registrationForm" action="/signup" method="post">
                 <strong>Sign Up</strong>
                 <br />
                 <br>
                 <label>We will never charge you for an account.</label>
                 <br />
-                <input type="text" class="form-control" name="firstName"  placeholder="First Name" class="textbox" required autocomplete="off" />
-                <input type="text" class="form-control" name="lastName" placeholder="Last Name" class="textbox" required autocomplete="off"/>
-                <input type="email" class="form-control" name="email" placeholder="First Name" class="textbox" required autocomplete="off"/>
-                <input type="password" class="form-control" name="password" placeholder="Password" class="textbox" required autocomplete="off"/>
-                <input type="password" class="form-control" name="repeatPassword" placeholder="Repeat Password" class="textbox" required autocomplete="off"/>
-                <label> Role:<span class="req">*</span> <label/>
+                <input type="text" class="form-control" name="firstName"  placeholder="First Name" required autocomplete="off" />
+                <input type="text" class="form-control" name="lastName" placeholder="Last Name" required autocomplete="off"/>
+                <input type="email" class="form-control" name="email" placeholder="Email" required autocomplete="off"/>
+                <input type="password" class="form-control" name="password" placeholder="Password" required autocomplete="off"/>
+                <input type="password" class="form-control" name="repeatPassword" placeholder="Repeat Password" required autocomplete="off"/>
                 <select id="role" name="role" required>
+                    <option value="">Pick A Role:</option>
                     <option value="CUSTOMER">Customer</option>
                     <option value="CHEF">Chef</option>
                 </select>
-            </div>
-            <br />
-            <a href="#" class="btn btn-primary">Sign Up</a>
+                <br />
+                <input class="btn btn-primary" id="button" type="submit" value="Sign Up" />
+            </form>
         </div>
     </div>
 </div>
